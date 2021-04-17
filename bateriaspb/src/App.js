@@ -1,5 +1,6 @@
 import React from 'react';
 import Appbar from './components/Appbar';
+import ItemListContainer from './containers/ItemListContainer'
 
 function App(){
   return (
@@ -7,6 +8,9 @@ function App(){
       <header>
         <Appbar/>
       </header>
+      <section>
+        <ItemListContainer/>
+      </section>
     </div>
   );
 }

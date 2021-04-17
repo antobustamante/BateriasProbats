@@ -15,11 +15,10 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import MenuList from '@material-ui/core/MenuList';
-import Button from '@material-ui/core/Button';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import Grow from '@material-ui/core/Grow';
 import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
+import CartWidget from './CartWidget'
 
 const useStyles = makeStyles((theme) => ({
   
@@ -92,6 +91,12 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
+
+  cart:{
+    color: 'white',
+    paddingTop: theme.spacing(2.2),
+    paddingLeft: theme.spacing(2)
+  }
 
   
 }));
@@ -268,6 +273,9 @@ export default function PrimarySearchAppBar() {
               color="inherit"
             >
               <AccountCircle />
+            </IconButton>
+            <IconButton className={classes.cart}>
+              <CartWidget/>
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>
