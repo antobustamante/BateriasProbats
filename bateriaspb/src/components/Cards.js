@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import CounterContainer from '../containers/CounterContainer';
 
 const useStyles = makeStyles({
     root: {
@@ -30,20 +31,20 @@ const useStyles = makeStyles({
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              Lizard
+              Baterías Moura
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-              across all continents except Antarctica
+              Batería 12x65 
             </Typography>
           </CardContent>
         </CardActionArea>
         <CardActions>
           <Button size="small" color="primary">
-            Share
+            Agregar al carrito
+            <CounterContainer/>
           </Button>
           <Button size="small" color="primary">
-            Learn More
+            Detalles
           </Button>
         </CardActions>
       </Card>
