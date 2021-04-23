@@ -1,6 +1,6 @@
 import React from 'react';
 import Appbar from './components/Appbar';
-import ItemListContainer from './containers/ItemListContainer'
+import ItemListContainer from './containers/ItemListContainer';
 
 function App(){
   return (

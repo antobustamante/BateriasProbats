@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "nombre": "Moura M20GD",
+        "tipo": "Batería 12x65",
+        "precio": "$10500",
+        "descripcion": "",
+        "img": "../public/moura.jpg",
+        "stock": 20
+    },
+    {
+        "id": 2,
+        "nombre": "Moura M22GD Reforzada",
+        "tipo": "Batería 12x65",
+        "precio": "$11500",
+        "descripcion": "",
+        "img": "../public/moura.jpg",
+        "stock": 25
+    },
+    {
+        "id": 3,
+        "nombre": "Bosch S3",
+        "tipo": "Batería 12x65",
+        "precio": "$8700",
+        "descripcion": "",
+        "img": "../public/bosch.jpg",
+        "stock": 18
+    },
+    {
+        "id": 4,
+        "nombre": "Bosch S3",
+        "tipo": "Batería 12x75",
+        "precio": "$9300",
+        "descripcion": "",
+        "img": "../public/bosch.jpg",
+        "stock": 19
+    },
+    {
+        "id": 5,
+        "nombre": "Willard UB620",
+        "tipo": "Batería 12x65",
+        "precio": "$10000",
+        "descripcion": "",
+        "img": "../public/willard.jpeg",
+        "stock": 21
+    },
+    {
+        "id": 6,
+        "nombre": "Willard UB730",
+        "tipo": "Batería 12x75",
+        "precio": "$11000",
+        "descripcion": "",
+        "img": "../public/willard.jpeg",
+        "stock": 24
+    }
+]
