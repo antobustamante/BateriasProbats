@@ -5,7 +5,7 @@
         "tipo": "Batería 12x65",
         "precio": "$10500",
         "descripcion": "",
-        "img": "../public/moura.jpg",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_838208-MLA44114247871_112020-V.jpg",
         "stock": 20
     },
     {
@@ -14,7 +14,7 @@
         "tipo": "Batería 12x65",
         "precio": "$11500",
         "descripcion": "",
-        "img": "../public/moura.jpg",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_838208-MLA44114247871_112020-V.jpg",
         "stock": 25
     },
     {
@@ -23,7 +23,7 @@
         "tipo": "Batería 12x65",
         "precio": "$8700",
         "descripcion": "",
-        "img": "../public/bosch.jpg",
+        "img": "https://repuestosamorim.com.ar/wp-content/uploads/2020/08/BOSCH-S375.jpg",
         "stock": 18
     },
     {
@@ -32,7 +32,7 @@
         "tipo": "Batería 12x75",
         "precio": "$9300",
         "descripcion": "",
-        "img": "../public/bosch.jpg",
+        "img": "https://repuestosamorim.com.ar/wp-content/uploads/2020/08/BOSCH-S375.jpg",
         "stock": 19
     },
     {
@@ -41,7 +41,7 @@
         "tipo": "Batería 12x65",
         "precio": "$10000",
         "descripcion": "",
-        "img": "../public/willard.jpeg",
+        "img": "https://www.tiendaescobar.com.ar/images/fill_slides_large/products/D19zxg8DK1L85K0gUM0hM2f1lQalm5NhaLkFXW5l.png",
         "stock": 21
     },
     {
@@ -50,7 +50,7 @@
         "tipo": "Batería 12x75",
         "precio": "$11000",
         "descripcion": "",
-        "img": "../public/willard.jpeg",
+        "img": "https://www.tiendaescobar.com.ar/images/fill_slides_large/products/D19zxg8DK1L85K0gUM0hM2f1lQalm5NhaLkFXW5l.png",
         "stock": 24
     }
 ]

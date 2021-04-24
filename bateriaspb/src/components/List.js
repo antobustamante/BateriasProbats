@@ -1,16 +1,17 @@
 import React from 'react';
-import Cards from './Cards';
+import Cards from './Items';
 
 export default function List({dataInput}) {
   return (
-    <ul>
-      {
-        dataInput.map((data) => { 
-          return (
-            <Cards key={data.id} data={data}/>
-          )
-        })
-      }
-    </ul>
+    <div>
+          {
+            dataInput.map((data) => { 
+              return (
+                <Cards key={data.id} data={data}/>
+              )
+            })
+          }
+    </div>
   )
 }
+

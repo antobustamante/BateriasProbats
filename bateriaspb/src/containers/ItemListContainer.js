@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import List from '../components/List';
+import Items from '../components/Items'
 import datajson from '../data.json';
+
 
 const useStyles = makeStyles({
 
@@ -11,6 +12,9 @@ const useStyles = makeStyles({
     },
     container:{
         display: 'flex'
+    },
+    items:{
+        flexWrap: 'wrap'
     }
 });
 
@@ -32,7 +36,8 @@ export default function ItemListContainer(){
                 <h1 className={classes.titulo}>Baterías Probats</h1>
             </div>
             <div>
-                <List dataInput={data}/>
+
+                <Items dataInput={data} className={classes.items}/>
             </div>
         </div>
     )
