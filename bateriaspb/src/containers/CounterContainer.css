@@ -1,6 +1,11 @@
-.container{
-    background-color: lightskyblue;
+.containerdiv{
+    background-color: gray;
     color: white;
     margin-left: 1vh;
     border: 1px solid lightgray;
+}
+
+.boton{
+    height: 3.5vh;
+    background-color: honeydew;
 }

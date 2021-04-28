@@ -18,7 +18,8 @@ import MenuList from '@material-ui/core/MenuList';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
-import CartWidget from './CartWidget'
+import CartWidget from './CartWidget';
+import logo from './../img/probats.png'
 
 const useStyles = makeStyles((theme) => ({
   
@@ -29,16 +30,18 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   root: {
-    display: 'flex',
+    display: 'flex'
   },
   paper: {
     marginRight: theme.spacing(2),
   },
-  title: {
+  logo: {
     display: 'none',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
+    width: "30vh",
+    height: "10vh"
   },
   search: {
     position: 'relative',
@@ -94,8 +97,8 @@ const useStyles = makeStyles((theme) => ({
 
   cart:{
     color: 'white',
-    paddingTop: theme.spacing(2.2),
-    paddingLeft: theme.spacing(2)
+    paddingLeft: theme.spacing(2),
+    paddingBottom: theme.spacing(2.5)
   }
 
   
@@ -219,7 +222,7 @@ export default function PrimarySearchAppBar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static" style={{background: '#dd2c00'}}>
+      <AppBar position="fixed" top="0" style={{background: 'black'}}>
         <Toolbar>
         <MenuIcon
           ref={anchorRef}
@@ -239,8 +242,8 @@ export default function PrimarySearchAppBar() {
                 </ClickAwayListener>
               </Paper>
         </Popper>
-          <Typography className={classes.title} variant="h6" noWrap>
-            Baterias Probats
+          <Typography className={classes.logo} noWrap>
+            <img src={logo} alt="baterias probats"/>
           </Typography>
           <div className={classes.grow}>
           </div>

@@ -13,20 +13,19 @@ import InfoIcon from '@material-ui/icons/Info';
 
 const useStyles = makeStyles({
     root: {
-      width: '30vw',
+      width: '45vh',
       transitionDuration: '0.3s',
-      height: '40vw',
-      justifyContent: 'space-between',
-      marginBottom: "2vh"
+      height: '50vh',
+      marginBottom: "3vh"
     },
     media: {
       height: 220,
     },
-    container: {
+    containerdiv: {
     display: "flex",
     width: "100%",
     flexWrap: 'wrap',
-    justifyContent: "space-between"
+    justifyContent: "space-evenly"
     }
 
 });
@@ -36,7 +35,7 @@ const useStyles = makeStyles({
     const classes = useStyles();
   
     return (
-      <div className={classes.container}>
+      <div className={classes.containerdiv}>
         {
         dataInput.map((data) => {
           
@@ -66,7 +65,7 @@ const useStyles = makeStyles({
                     <Button variant="contained" size="small" color="primary">
                       Agregar al carrito
                     </Button>
-                    <CounterContainer/>
+                    <CounterContainer stock={data.stock}/>
                     <InfoIcon size="small" color="action"/>
                   </CardActions>
                 </Card>

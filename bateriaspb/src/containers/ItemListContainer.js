@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Items from '../components/Items'
-import datajson from '../data.json';
+import Items from '../components/Items';
+
+const { getPosts } = require('../services/postService');
 
 
 const useStyles = makeStyles({
@@ -10,7 +11,7 @@ const useStyles = makeStyles({
         textAlign: 'center',
         width: '100%',
     },
-    container:{
+    containerdiv:{
         display: 'flex'
     },
     items:{
@@ -25,18 +26,16 @@ export default function ItemListContainer(){
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        setTimeout(() => {
-            setData(datajson);
-        }, 2000)
+        getPosts()
+            .then(res => setData(res))
     })
 
     return(
         <div>
-            <div className={classes.container}>
+            <div className={classes.containerdiv}>
                 <h1 className={classes.titulo}>Baterías Probats</h1>
             </div>
             <div>
-
                 <Items dataInput={data} className={classes.items}/>
             </div>
         </div>

@@ -4,7 +4,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 function CartWidget(){
     return(
         <div>
-            <ShoppingCartIcon/>
+            <ShoppingCartIcon styles={{verticalAlign: 'inherit'}}/>
         </div>
     )
 }
