@@ -1,28 +1,55 @@
 import React, {useState, useEffect} from 'react';
-import {useParams, Link} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import ItemDetail from '../components/ItemDetail';
+import { makeStyles } from '@material-ui/core/styles';
+
+
+const useStyles = makeStyles({
+
+    titulo:{
+        textAlign: 'center',
+        width: '100%',
+        marginTop: '12vh'
+    },
+    details:{
+        display: 'flex',
+        justifyContent: 'center'
+    },
+    text:{
+        textDecoration: 'none'
+    },
+    button:{
+        display: 'flex',
+        justifyContent:'center',
+        textAlign: 'center'
+    }
+
+});
 
 const { getPostById } = require('../services/postService');
 
 export default function ItemDetailContainer() {
-    let {itemId} = useParams();
+
+    const classes = useStyles();
+
+    let {productsId} = useParams();
     
     const [data, setData] = useState({ nombre: "", tipo: "", precio: "", descripción: "", img: ""});
 
     useEffect(() => {
-        getPostById(itemId)
+        getPostById(productsId)
             .then(res => setData(res))
-    },[itemId])
+    },[productsId])
     
     return(
         <div>
-            <h2>Detalle de Producto</h2>
-            <div>
+            <h1 className={classes.titulo}>Detalle de Producto</h1>
+            <div className={classes.details}>
                 <ItemDetail nombre={data.nombre} tipo={data.tipo} precio={data.precio} descripción={data.descripción} img={data.img}/>
             </div>
-            <button type="button">
-                <Link to={`/products`}>Volver a productos</Link>
-            </button>
+            <div className={classes.button}>
+            
+            </div>
         </div>
     )
 

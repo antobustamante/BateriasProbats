@@ -10,6 +10,9 @@ import Typography from '@material-ui/core/Typography';
 import CounterContainer from '../containers/CounterContainer';
 import Grid from '@material-ui/core/Grid';
 import InfoIcon from '@material-ui/icons/Info';
+import {Link} from 'react-router-dom';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 const useStyles = makeStyles({
     root: {
@@ -66,7 +69,21 @@ const useStyles = makeStyles({
                       Agregar al carrito
                     </Button>
                     <CounterContainer stock={data.stock}/>
-                    <InfoIcon size="small" color="action"/>
+                    {['right'].map((placement) => (
+                    <OverlayTrigger
+                      key={placement}
+                      placement={placement}
+                      overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          Detalle del producto
+                        </Tooltip>
+                      }
+                    >
+                      <Link to={`/products/${data.id}`}>
+                      <InfoIcon size="small" color="action"/>
+                      </Link>
+                    </OverlayTrigger>
+                  ))}
                   </CardActions>
                 </Card>
             </Grid>

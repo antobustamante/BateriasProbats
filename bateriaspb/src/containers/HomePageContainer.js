@@ -15,6 +15,15 @@ const useStyles = makeStyles({
 
     carousel:{
         marginTop: "9.5vh"
+    },
+    titulo:{
+        textAlign: 'center',
+        width: '100%',
+        marginTop: '3vh',
+        marginBottom: '6vh'
+    },
+    containerdiv:{
+        display: 'flex'
     }
 
 })
@@ -36,6 +45,9 @@ export default function Home(){
                     <img className={classes.img} src={carousel3} alt="la mejor calidad"/>
                 </Carousel.Item>
                 </Carousel>
+            <div className={classes.containerdiv}>
+                <h1 className={classes.titulo}>Baterías Probats</h1>
+            </div>
         </div>
     )
     

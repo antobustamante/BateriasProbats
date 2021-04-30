@@ -19,7 +19,8 @@ import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 import CartWidget from './CartWidget';
-import logo from './../img/probats.png'
+import logo from './../img/probats.png';
+import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   
@@ -39,9 +40,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'none',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
-    },
-    width: "30vh",
-    height: "10vh"
+    }
   },
   search: {
     position: 'relative',
@@ -99,6 +98,10 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     paddingLeft: theme.spacing(2),
     paddingBottom: theme.spacing(2.5)
+  },
+
+  img:{
+    width: '40%'
   }
 
   
@@ -235,16 +238,24 @@ export default function PrimarySearchAppBar() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <MenuItem onClick={handleClose}>Quiénes somos</MenuItem>
-                    <MenuItem onClick={handleClose}>Productos</MenuItem>
-                    <MenuItem onClick={handleClose}>Contacto</MenuItem>
+                  <Link to={`/`}>
+                    <MenuItem onClick={handleClose}>Inicio</MenuItem>
+                  </Link>
+                    <Link to={`/products`}>
+                      <MenuItem onClick={handleClose}>Productos</MenuItem>
+                    </Link>
+                    <Link to={`/contact`}>
+                      <MenuItem onClick={handleClose}>Contacto</MenuItem>
+                    </Link>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
         </Popper>
+        <Link to={`/`}>
           <Typography className={classes.logo} noWrap>
-            <img src={logo} alt="baterias probats"/>
+            <img src={logo} alt="baterias probats" className={classes.img}/>
           </Typography>
+        </Link>
           <div className={classes.grow}>
           </div>
           <div className={classes.search}>

@@ -4,6 +4,8 @@ import ItemListContainer from './containers/ItemListContainer';
 import Home from './containers/HomePageContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import ProductPageContainer from './containers/ProductPageContainer';
+import ContactPageContainer from './containers/ContactPageContainer';
 
 function App(){
   return (
@@ -15,24 +17,16 @@ function App(){
             <ItemListContainer/>
           </Route>
           <Route exact path="/products">
-            <ItemListContainer/>
+            <ProductPageContainer/>
           </Route>
           <Route path="/products/:productsId">
             <ItemDetailContainer/>
           </Route>
+          <Route path="/contact">
+            <ContactPageContainer/>
+          </Route>
         </Switch>
-      </BrowserRouter>
-    // <div>
-    //   <header>
-    //     <Appbar/>
-    //   </header>
-    //   <section>
-    //     <article>
-    //       <Home/>
-    //     </article>
-    //     <ItemListContainer/>
-    //   </section>
-    // </div>
+    </BrowserRouter>
   );
 }
 
