@@ -1,12 +1,13 @@
 import React from 'react';
-import './../containers/CounterContainer.css'
+import './../containers/CounterContainer.css';
+import Button from 'react-bootstrap/Button';
 
 export default function Counter({increment, decrement}){
 
     return(
         <div>
-            <button className='boton' onClick={increment}>+</button>
-            <button className='boton' onClick={decrement}>-</button>
+            <Button className='boton' onClick={increment}>+</Button>
+            <Button className='boton' onClick={decrement}>-</Button>
         </div>
     )
 }

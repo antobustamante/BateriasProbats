@@ -5,20 +5,16 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import CounterContainer from '../containers/CounterContainer';
 import Grid from '@material-ui/core/Grid';
-import InfoIcon from '@material-ui/icons/Info';
 import {Link} from 'react-router-dom';
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Tooltip from 'react-bootstrap/Tooltip';
 
 const useStyles = makeStyles({
     root: {
       width: '45vh',
       transitionDuration: '0.3s',
-      height: '50vh',
+      height: 'auto',
       marginBottom: "3vh"
     },
     media: {
@@ -35,6 +31,7 @@ const useStyles = makeStyles({
 
   export default function MediaCard({dataInput}) {
     
+    
     const classes = useStyles();
   
     return (
@@ -48,6 +45,7 @@ const useStyles = makeStyles({
               <Grid item md={4}>
                 <Card className={classes.root}>
                   <CardActionArea>
+                  <Link to={`/products/${data.id}`}>
                     <CardMedia
                       component="img"
                       title={data.nombre}
@@ -63,28 +61,14 @@ const useStyles = makeStyles({
                         {data.tipo}
                       </Typography>
                     </CardContent>
+                    </Link>
                   </CardActionArea>
-                  <CardActions>
+                  {/* <CardActions>
                     <Button variant="contained" size="small" color="primary">
                       Agregar al carrito
-                    </Button>
+                    </Button> 
                     <CounterContainer stock={data.stock}/>
-                    {['right'].map((placement) => (
-                    <OverlayTrigger
-                      key={placement}
-                      placement={placement}
-                      overlay={
-                        <Tooltip id={`tooltip-${placement}`}>
-                          Detalle del producto
-                        </Tooltip>
-                      }
-                    >
-                      <Link to={`/products/${data.id}`}>
-                      <InfoIcon size="small" color="action"/>
-                      </Link>
-                    </OverlayTrigger>
-                  ))}
-                  </CardActions>
+                  </CardActions> */}
                 </Card>
             </Grid>
           </Grid>

@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 import Visualizer from '../components/Visualizer';
 import Counter from '../components/Counter';
 import './CounterContainer.css';
-import datajson from '../data.json'
+import datajson from '../data.json';
+import Button from 'react-bootstrap/Button';
 
-export default function CounterContainer({stock}) {
+export default function CounterContainer({stock, finalizar}) {
     const [number, setNumber] = useState(0);
     const [data, setData] = useState([]);
 
@@ -27,11 +28,20 @@ export default function CounterContainer({stock}) {
       setNumber(number - 1);
       }
     }
-  
+
+    function addToCart(){
+      finalizar(number);
+    }
+
       return(
         <div className='containerdiv'>
+          <div>
+          <Button variant="contained" size="small" color="primary" onClick={addToCart}>
+          Agregar al carrito
+          </Button>
+          </div>
           <Visualizer number={number}/>
-          <Counter className='boton' increment={onIncrement} decrement={onDecrement} dataInput={data}/>
+          <Counter increment={onIncrement} decrement={onDecrement} dataInput={data}/>
         </div>
       )
 }
