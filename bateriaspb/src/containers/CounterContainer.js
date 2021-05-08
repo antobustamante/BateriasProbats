@@ -2,18 +2,10 @@ import React, {useState} from 'react';
 import Visualizer from '../components/Visualizer';
 import Counter from '../components/Counter';
 import './CounterContainer.css';
-import datajson from '../data.json';
 import Button from 'react-bootstrap/Button';
 
 export default function CounterContainer({stock, finalizar}) {
     const [number, setNumber] = useState(0);
-    const [data, setData] = useState([]);
-
-
-    new Promise((resolve) => {
-      resolve(datajson); 
-    })
-    .then(res=> setData(res))
 
   
     function onIncrement(){
@@ -41,7 +33,7 @@ export default function CounterContainer({stock, finalizar}) {
           </Button>
           </div>
           <Visualizer number={number}/>
-          <Counter increment={onIncrement} decrement={onDecrement} dataInput={data}/>
+          <Counter increment={onIncrement} decrement={onDecrement}/>
         </div>
       )
 }

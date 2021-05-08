@@ -1,30 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import CounterContainer from './../containers/CounterContainer';
 import {Link} from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import { CartContext } from '../context/cartContext';
 
-export default function ItemDetail({img, nombre, tipo, descripcion, precio, stock}) {
+export default function ItemDetail({data, img, stock, precio, tipo, nombre}) {
 
-  const sendCarrito= {
-    nombre: nombre,
-    tipo: tipo,
-    descripcion: descripcion,
-    precio: precio
-  }
+  const { addToCart } = useContext(CartContext);
 
   const [show, setShow] = useState(true);
 
   let cantidadCompra;
 
-  function buttonFinalizar (cantidad){
+  function productSelected(){
+    const newItem = {
+      id: data.id,
+      tipo: data.tipo,
+      precio: data.precio,
+      cantidad: cantidadCompra
+    };
+    addToCart(newItem);
+  }
+
+  function addButton (cantidad){
     setShow({
       hidden: true
     });
     cantidadCompra = cantidad;
-    sendCarrito.cantidad = cantidadCompra;
+    productSelected();
   }
+
+  
 
   let history = useHistory();
 
@@ -43,9 +51,9 @@ export default function ItemDetail({img, nombre, tipo, descripcion, precio, stoc
           <Card.Text>
           Precio: {precio}
           </Card.Text>
-          <CounterContainer finalizar={buttonFinalizar} stock={stock}/>
-          <Button hidden={!show.hidden} onClick={() => history.push({pathname: `/cart`, state: {cart: {sendCarrito} }})}>
-            Finalizar Compra
+          <CounterContainer finalizar={addButton} stock={stock}/>
+          <Button hidden={!show.hidden} onClick={() => history.push(`/cart`)}>
+            Ver carrito
           </Button>
           <Link to={`/products`} style={{marginLeft:'3vh'}}>Volver a productos</Link>
         </Card.Body>
