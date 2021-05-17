@@ -14,7 +14,7 @@ export default function CartList() {
                         <th></th>
                         <th>Producto</th>
                         <th>Cantidad</th>
-                        <th>Confirmar/Eliminar</th>
+                        <th>Eliminar</th>
                         <th>Total</th>
                     </tr>
                 </thead>

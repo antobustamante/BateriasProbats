@@ -27,7 +27,7 @@ export default function ItemListContainer(){
     return(
 
         <div>
-            <Items dataInput={data} className={classes.items}/>
+            <Items key={data.id} dataInput={data} className={classes.items}/>
         </div>
     )
 

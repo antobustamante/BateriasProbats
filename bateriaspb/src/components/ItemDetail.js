@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import { CartContext } from '../context/cartContext';
 
-export default function ItemDetail({data, img, stock, precio, tipo, nombre}) {
+export default function ItemDetail({data, img, precio, tipo, nombre}) {
 
   const { addToCart } = useContext(CartContext);
 
@@ -32,8 +32,6 @@ export default function ItemDetail({data, img, stock, precio, tipo, nombre}) {
     productSelected();
   }
 
-  
-
   let history = useHistory();
 
     return (
@@ -49,9 +47,9 @@ export default function ItemDetail({data, img, stock, precio, tipo, nombre}) {
             Sed elementum, orci non porta sollicitudin, urna velit ultrices lectus, at convallis nulla sem ac sem.
           </Card.Text>
           <Card.Text>
-          Precio: {precio}
+          Precio: ${precio}
           </Card.Text>
-          <CounterContainer finalizar={addButton} stock={stock}/>
+          <CounterContainer finalizar={addButton}/>
           <Button hidden={!show.hidden} onClick={() => history.push(`/cart`)}>
             Ver carrito
           </Button>

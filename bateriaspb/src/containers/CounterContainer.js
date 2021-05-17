@@ -4,13 +4,13 @@ import Counter from '../components/Counter';
 import './CounterContainer.css';
 import Button from 'react-bootstrap/Button';
 
-export default function CounterContainer({stock, finalizar}) {
+export default function CounterContainer({finalizar}) {
     const [number, setNumber] = useState(0);
 
   
     function onIncrement(){
       
-      if(stock>number){
+      if(number<5){
       setNumber(number + 1);
       }
     }

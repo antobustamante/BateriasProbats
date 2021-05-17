@@ -34,8 +34,8 @@ export default function ItemDetailContainer() {
 
     let {productsId} = useParams();
     
-    const [data, setData] = useState({ nombre: "", tipo: "", precio: "", descripcion: "", img: ""});
-
+    const [data, setData] = useState();
+    // { id: "", nombre: "", tipo: "", precio: "", descripcion: "", img: ""}
     useEffect(() => {
         getPostById(productsId)
             .then(res => setData(res))
@@ -45,7 +45,7 @@ export default function ItemDetailContainer() {
         <div>
             <h1 className={classes.titulo}>Detalle de Producto</h1>
             <div className={classes.details}>
-                <ItemDetail nombre={data.nombre} tipo={data.tipo} precio={data.precio} descripcion={data.descripcion} img={data.img} stock={data.stock}/>
+                <ItemDetail data={data}/>
             </div>
             <div className={classes.button}>
             

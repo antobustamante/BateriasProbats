@@ -1,60 +1,54 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { CartContext } from '../context/cartContext';
 import Button from 'react-bootstrap/Button';
 
-export default function Cart({ itemSale, stock }) {
-    const [number, setNumber] = useState(itemSale.cantidad);
+export default function Cart({ itemSale}) {
     const { updateToCart, handleRemove } = useContext(CartContext);
 
-    function onIncrement() {
-        if(stock>number){
-            setNumber(number + 1);
-        }
-        itemSale.cantidad = number;
-    }
-
-    function onDecrement() {
-        if(number>0){
-            setNumber(number - 1);
-        }
-        itemSale.cantidad = number;
-    }
-
-    const [show, setShow] = useState(false);
-
-    function updateQuantity(){
+    function increaseQuantity(){
         const newItem = {
             id: itemSale.id,
+            nombre: itemSale.nombre,
             tipo: itemSale.tipo,
             precio: itemSale.precio,
-            cantidad: number
+            cantidad: itemSale.cantidad +1
         };
         updateToCart(newItem);
-        setShow({
-            hidden: true
-        });
     }
 
-    var subTotal = itemSale.precio*number;
+    function reduceQuantity(){
+        const newItem = {
+            id: itemSale.id,
+            nombre: itemSale.nombre,
+            tipo: itemSale.tipo,
+            precio: itemSale.precio,
+            cantidad: itemSale.cantidad -1
+        };
+        updateToCart(newItem);
+    }
 
     return (
         <tr>
-            <th>{itemSale.id}</th>
+            <th>{itemSale.nombre}</th>
             <td>{itemSale.tipo}</td>
             <td>
-                <Button onClick={onIncrement} hidden={show.hidden}>+</Button>
+            {
+                itemSale.cantidad < 5 ? <Button onClick={increaseQuantity}>+</Button> : <Button variant="disabled"></Button>
+            }
             
-                <span>{number}</span>
+                <span>{itemSale.cantidad}</span>
             
-                <Button onClick={onDecrement} hidden={show.hidden}>-</Button>
+            {
+                itemSale.cantidad > 1 ? <Button onClick={reduceQuantity}>-</Button> : <Button variant="disabled"></Button>
+            }
+            
             </td>
             <td>
-                <button onClick={updateQuantity}>Confirmar</button>
                 <button onClick={() => handleRemove(itemSale.id)}>
                     <img src="" alt="Borrar"/>
                 </button>
             </td>
-            <td>$ <span>{subTotal}</span></td>
+            <td>$ <span>{(itemSale.precio*itemSale.cantidad).toFixed(2)}</span></td>
         </tr>
     )
 }

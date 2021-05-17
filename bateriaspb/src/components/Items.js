@@ -39,7 +39,7 @@ const useStyles = makeStyles({
           
           return(
             
-            <Grid key={data.id} data={data}>
+            <Grid data={data}>
               <Grid item md={4}>
                 <Card className={classes.root}>
                   <CardActionArea>
@@ -49,7 +49,8 @@ const useStyles = makeStyles({
                       title={data.nombre}
                       image={data.img}
                       className={classes.media}
-                      alt={data.nombre}>
+                      alt={data.nombre}
+                    >
                     </CardMedia>
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="h2">
